@@ -8,8 +8,6 @@
   font-family: "Urbanist", sans-serif;
 }
 
-/*// thapa technical SUBSCRIBE*/
-
 html {
   font-size: 62.5%;
 }
@@ -34,10 +32,18 @@ main h2 {
   font-size: 3rem;
   font-family: "Lexend Deca", sans-serif;
   margin-bottom: 4.8rem;
+  color: #68b984;
 }
 
-main h2 .icons {
-  color: #68b984;
+main h1 {
+  font-size: 3rem;
+  font-family: "Lexend Deca", sans-serif;
+  margin-bottom: 4.8rem;
+  color: #323232;
+}
+
+.header-box {
+  display: flex;
 }
 
 /*===================*/
@@ -72,6 +78,15 @@ nav a.active {
 /*Form  styling */
 /*====================*/
 
+/* #inputID::placeholder {
+  color: #ff0000;
+  opacity: 1;
+} */
+form input::placeholder {
+  color: #ccc;
+  /* opacity: 0.3; */
+}
+
 form input {
   border: 0.1rem solid #ccc;
   border-radius: 0.3rem;
@@ -91,8 +106,12 @@ form button {
   font-weight: bold;
   cursor: pointer;
   margin-left: 2.4rem;
-  background-color: #68b984;
+  background-color: #70c78e;
   color: #fff;
+}
+
+form button:hover {
+  background-color: #45ab69;
 }
 
 label {

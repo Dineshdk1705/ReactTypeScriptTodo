@@ -1,4 +1,4 @@
-import { useTodos } from "../store/todosStrore";
+import { useTodos } from "../store/todosStore";
 import { useSearchParams } from "react-router-dom";
 
 const Todos = () => {

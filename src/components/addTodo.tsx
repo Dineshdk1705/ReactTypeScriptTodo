@@ -1,9 +1,8 @@
 import { FormEvent, useState } from "react";
-import { useTodos } from "../store/todosStrore";
+import { useTodos } from "../store/todosStore";
 
 const AddTodo = () => {
   const [todo, setTodo] = useState("");
-
   const { handleAddTodo } = useTodos();
 
   const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -16,6 +15,7 @@ const AddTodo = () => {
       <input
         type="text"
         name=""
+        placeholder="Add your todo here..."
         value={todo}
         onChange={(e) => setTodo(e.target.value)}
       />

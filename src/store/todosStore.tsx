@@ -33,15 +33,19 @@ export const TodosProvider = ({ children }: TodosProviderProps) => {
   //add todo
   const handleAddTodo = (task: string) => {
     setTodos((prev) => {
-      const newTodos: Todo[] = [
-        {
-          id: Math.random().toString(),
-          task: task,
-          completed: false,
-          createdAt: new Date(),
-        },
-        ...prev,
-      ];
+      const newTodos: Todo[] =
+        task.trim().length !== 0
+          ? [
+              {
+                id: Math.random().toString(),
+                task: task,
+                completed: false,
+                createdAt: new Date(),
+              },
+              ...prev,
+            ]
+          : [...prev];
+
       localStorage.setItem("todos", JSON.stringify(newTodos));
       return newTodos;
     });
@@ -72,7 +76,12 @@ export const TodosProvider = ({ children }: TodosProviderProps) => {
 
   return (
     <todosContext.Provider
-      value={{ todos, handleAddTodo, toggleTodoAsCompleted, handleDeleteTodo }}
+      value={{
+        todos,
+        handleAddTodo,
+        toggleTodoAsCompleted,
+        handleDeleteTodo,
+      }}
     >
       {children}
     </todosContext.Provider>
