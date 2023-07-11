@@ -1,8 +1,8 @@
 import AddTodo from "./components/addTodo";
 import Navbar from "./components/navbar";
 import Todos from "./components/todos";
-import "./App.css";
 import { BiNotepad } from "react-icons/bi";
+import "./App.css";
 
 const App = () => {
   return (
