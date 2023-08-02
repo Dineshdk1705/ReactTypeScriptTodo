@@ -7,7 +7,9 @@ const AddTodo = () => {
 
   const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    handleAddTodo(todo);
+    handleAddTodo(
+      todo.replace(/[~`!@#$%^&*()+={}\[\];:\'\"<>.,\/\\\?-_]/g, "")
+    );
     setTodo("");
   };
   return (

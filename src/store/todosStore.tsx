@@ -33,8 +33,13 @@ export const TodosProvider = ({ children }: TodosProviderProps) => {
   //add todo
   const handleAddTodo = (task: string) => {
     setTodos((prev) => {
+      // desired = stringToReplace.replace(/[^\w\s]/gi, '')
+      const prevTaskList = prev.map((ele) =>
+        ele.task.replace(/[~`!@#$%^&*()+={}\[\];:\'\"<>.,\/\\\?-_]/g, "")
+      );
+      console.log(prevTaskList);
       const newTodos: Todo[] =
-        task.trim().length !== 0
+        task.trim().length !== 0 && !prevTaskList.includes(task)
           ? [
               {
                 id: Math.random().toString(),
