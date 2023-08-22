@@ -7,7 +7,7 @@ const AddTodo = () => {
 
   const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    handleAddTodo(todo.replace(/[^a-zA-Z ]/g, ""));
+    handleAddTodo(todo.replace(/[^a-zA-Z0-9 ]/g, ""));
     setTodo("");
   };
   return (
